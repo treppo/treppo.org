@@ -1,0 +1,14 @@
+name: Mutual exclusion
+markdown: redcarpet
+pygments: true
+
+# Github style markdown
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+
+exclude: ['sass']
