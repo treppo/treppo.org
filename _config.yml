@@ -1,4 +1,4 @@
-name: Mutual exclusion
+name: treppo.org
 markdown: redcarpet
 pygments: true
 
@@ -11,4 +11,5 @@ redcarpet:
     - strikethrough
     - fenced_code_blocks
 
-exclude: ['sass']
+exclude: ['sass', 'Gemfile', 'Gemfile.lock', 'config.rb']
+encoding: 'UTF-8'
