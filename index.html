@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Espresso
+title: treppo.org
 ---
 
+<aside>
+  {% include about.html %}
+</aside>
+
 <main>
-  <section>
-    {% include about.html %}
-  </section>
-  <section>
-    <h1>Espresso</h1>
-    <ul class="posts">
-      {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_long_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
+  <!-- <section> -->
+  <!--   <ul class="posts"> -->
+  <!--     {% for post in site.posts %} -->
+  <!--       <li><span>{{ post.date | date_to_long_string }}</span> &#38;raquo; <a href="{{ post.url }}">{{ post.title }}</a></li> -->
+  <!--     {% endfor %} -->
+  <!--   </ul> -->
+  <!-- </section> -->
 </main>
