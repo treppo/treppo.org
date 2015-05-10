@@ -1,6 +1,6 @@
 name: treppo.org
 markdown: redcarpet
-highlighter: rouge
+highlighter: pygments
 
 # Github style markdown
 redcarpet:
