@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/css/screen.css">
-    </head>
-    <body>
-      <div class='substance'>
-        {{ content }}
-      </div>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .substance {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.5em;
+            text-rendering: optimizeLegibility;
+            max-width: 35em;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10% 1em; }
+
+        .about {
+            border-left: 0.25em solid lightgray;
+            padding-left: 1em;
+            margin-left: -1.25em; }
+
+        .portrait {
+            border-radius: 50%; }
+    </style>
+</head>
+<body class='substance'>
+    {{ content }}
+</body>
 </html>
