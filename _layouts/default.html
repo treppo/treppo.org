@@ -6,25 +6,41 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        .substance {
+        html, body {
+            height: 100%;
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5em;
+            font-size: 16px;
+            line-height: 1.7em;
             text-rendering: optimizeLegibility;
-            max-width: 35em;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10% 1em; }
+            margin: 0;
+        }
+
+        .substance {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .about {
-            border-left: 0.25em solid lightgray;
-            padding-left: 1em;
-            margin-left: -1.25em; }
+            margin: 1em;
+            max-width: 35em;
+        }
 
         .portrait {
-            border-radius: 50%; }
+            border-radius: 50%;
+        }
+
+        .about-message {
+            border-left: 0.25em solid lightgray;
+            padding-left: 1em;
+            margin-left: -1.25em;
+        }
     </style>
 </head>
-<body class='substance'>
+<body>
+<div class="substance">
     {{ content }}
+</div>
 </body>
 </html>
