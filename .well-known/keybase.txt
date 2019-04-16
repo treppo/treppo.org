@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/treppo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://treppo.org
+  * I am treppo (https://keybase.io/treppo) on keybase.
+  * I have a public key ASCx6oX60grcNvJU2YvkBmWl-RcBW30by2PdgJsrWFqjSAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e8c1997cf88ad0692eee581788b752769e97349485e6c1162793aae4f9c1adde0a",
+      "host": "keybase.io",
+      "kid": "0120b1ea85fad20adc36f254d98be40665a5f917015b7d1bcb63dd809b2b585aa3480a",
+      "uid": "ba3002f7bc98e2a3956c0236e037c100",
+      "username": "treppo"
+    },
+    "merkle_root": {
+      "ctime": 1555398135,
+      "hash": "52b5c34f798ccb2dd0232e0c8186891d5929a4de510932f8d113cc4c6521ed7c9e2ff85e21ca3eb9f8e66c2a876b13b6a0cbf7a343465e000b8fe0f0457a75d7",
+      "hash_meta": "4bbb760946ecb69c6fa7385f2a344fa08af63ef7e66b7eba41b9e3b10ec7d9e0",
+      "seqno": 5179079
+    },
+    "service": {
+      "entropy": "0L24uu4KB3jNYwDnL3E977MO",
+      "hostname": "treppo.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.2.2"
+  },
+  "ctime": 1555398179,
+  "expire_in": 504576000,
+  "prev": "451ab62719c392698839f7902321fbcabd6cd9d35da756c9ef765d772951f475",
+  "seqno": 25,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgseqF+tIK3DbyVNmL5AZlpfkXAVt9G8tj3YCbK1hao0gKp3BheWxvYWTESpcCGcQgRRq2JxnDkmmIOfeQIyH7yr1s2dNdp1bJ73ZddylR9HXEIHjFY0+Ax6VgurzC9OalLRe/0e99TgxNqFJdGc7AfUr8AgHCo3NpZ8RA4lxO8J3tvjqT7OSZ5h6N7RzBoeSxKYBMoOVs6PiOSxqG73EWlhCdsbreRF3gTI9crSRanbAn9KicFkVbPAS9BqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICHE/LJ6gdaGlbsH5Bx1YPZJ0gbHXv5PhFxiajfmrjeqo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/treppo
+
+==================================================================
