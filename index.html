@@ -37,25 +37,34 @@
             border-radius: 50%;
         }
 
-        .cv .entry {
+        .h-event {
             margin: var(--line-height) 0;
+        }
+
+        .h-event .p-location, .h-event .p-name, .h-event .p-summary {
+            margin-top: 0;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body class="substance">
 <header>
-    <img src="images/portrait.jpeg" class="portrait" alt="A painted portrait of me" width="200" height="200"/>
+    <img src="images/portrait.jpeg" class="portrait"
+         alt="A painted portrait of me" width="200" height="200"/>
     <p class='about-message'>
         Welcome! My name is Christian Treppo, may I offer you something?<br>
         Maybe you care to take a look at my
         <a href="https://github.com/treppo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1em" preserveAspectRatio="xMinYMin meet"
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1em"
+                 preserveAspectRatio="xMinYMin meet"
                  viewBox="0 0 32 34">
                 <path fill-rule="evenodd"
                       d="M17.5 0C8.505 0 1.211 7.293 1.211 16.291c0 7.196 4.667 13.301 11.141 15.456.815.149 1.112-.354 1.112-.786 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.382-1.809-2.382-1.479-1.011.112-.991.112-.991 1.635.116 2.495 1.679 2.495 1.679 1.453 2.489 3.812 1.77 4.741 1.354.148-1.053.568-1.771 1.034-2.178-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.232 1.677-4.371-.168-.412-.727-2.068.159-4.311 0 0 1.368-.438 4.48 1.67 1.299-.362 2.693-.542 4.078-.549 1.383.007 2.777.187 4.078.549 3.11-2.108 4.475-1.67 4.475-1.67.889 2.243.33 3.899.162 4.311 1.044 1.139 1.675 2.593 1.675 4.371 0 6.258-3.809 7.635-7.438 8.038.585.503 1.106 1.497 1.106 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.293.943 1.12.784 6.467-2.159 11.131-8.26 11.131-15.454C33.791 7.293 26.497 0 17.5 0"/>
             </svg>
-            projects</a> or listen to my <a href="https://open.spotify.com/artist/3grEqW457YHOwO2LfkPwRX">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1em" viewBox="0 0 168 168">
+            projects</a> or listen to my <a
+            href="https://open.spotify.com/artist/3grEqW457YHOwO2LfkPwRX">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1em"
+             viewBox="0 0 168 168">
             <path fill="#1ED760"
                   d="M83.996.277C37.747.277.253 37.77.253 84.019c0 46.251 37.494 83.741 83.743 83.741 46.254 0 83.744-37.49 83.744-83.741 0-46.246-37.49-83.738-83.745-83.738l.001-.004zm38.404 120.78c-1.5 2.46-4.72 3.24-7.18 1.73-19.662-12.01-44.414-14.73-73.564-8.07-2.809.64-5.609-1.12-6.249-3.93-.643-2.81 1.11-5.61 3.926-6.25 31.9-7.291 59.263-4.15 81.337 9.34 2.46 1.51 3.24 4.72 1.73 7.18zm10.25-22.805c-1.89 3.075-5.91 4.045-8.98 2.155-22.51-13.839-56.823-17.846-83.448-9.764-3.453 1.043-7.1-.903-8.148-4.35-1.04-3.453.907-7.093 4.354-8.143 30.413-9.228 68.222-4.758 94.072 11.127 3.07 1.89 4.04 5.91 2.15 8.976v-.001zm.88-23.744c-26.99-16.031-71.52-17.505-97.289-9.684-4.138 1.255-8.514-1.081-9.768-5.219-1.254-4.14 1.08-8.513 5.221-9.771 29.581-8.98 78.756-7.245 109.83 11.202 3.73 2.209 4.95 7.016 2.74 10.733-2.2 3.722-7.02 4.949-10.73 2.739z"/>
         </svg>
@@ -63,55 +72,75 @@
         Of course you can always send me an email to [my first name]@treppo.org.
     </p>
 </header>
-<main class="cv">
-    <h1>Curriculum vitae</h1>
-    <div class="entry">
-        <time>2015 to present</time>
-        <div class="entity"><a href="https://thoughtworks.com/">Thoughtworks</a></div>
-        <div class="description">
-            Lead Consultant Developer
-        </div>
+<main class="h-resume">
+    <h1 class="p-name">Curriculum vitae</h1>
+    <div class="p-experience h-event">
+        <time class="dt-start">2015</time>
+        to
+        <time class="dt-end">present</time>
+        <p class="p-location"><a
+                href="https://thoughtworks.com/">Thoughtworks</a></p>
+        <p class="p-name">Lead Consultant Developer</p>
+        <p class="p-summary"></p>
     </div>
-    <div class="entry">
-        <time>2014 to 2015</time>
-        <div class="entity"><a href="https://www.wimdu.com/">Wimdu</a></div>
-        <div class="description">
-            Senior Developer
-        </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2014</time>
+        to
+        <time class="dt-end">2015</time>
+        <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
+        <p class="p-name">Senior Developer</p>
+        <p class="p-summary">For a brief period I returned to a company already in trouble until most of the development team left. I got to contribute to my first Clojure codebase and attend Fred George's excellent Object Bootcamp.</p>
     </div>
-    <div class="entry">
-        <time>2013 to 2014</time>
-        <div class="entity">National College of Ireland Dublin</div>
-        <div class="grade">Master of Science in Web Technologies</div>
+    <div class="p-education h-event">
+        <time class="dt-start">2013</time>
+        to
+        <time class="dt-end">2014</time>
+        <p class="p-location">National College of Ireland Dublin</p>
+        <div class="p-name">Master of Science in Web Technologies</div>
+        <p class="p-summary">I took a year off to finish my degree and read dozens of books</p>
     </div>
-    <div class="entry">
-        <time>2012 to 2013</time>
-        <div class="entity"><a href="https://www.wimdu.com/">Wimdu</a></div>
-        <div class="description">Senior Developer</div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2012</time>
+        to
+        <time class="dt-end">2013</time>
+        <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
+        <p class="p-name">Frontend Developer</p>
+        <p class="p-summary">Entering the startup scene of Berlin at an Airbnb <strike>rip-off</strike> competitor. Over time, we built a solid development team, practicing <span class="p-skill">TDD</span>, <span class="p-skill">pair programming</span> and <span class="p-skill">Kanban</span>. I mostly lead the effort to make website responsive, untangle the Jquery spaghetti and improve the performance before moving to the backend where we decoupled the search service from the monolithic <span class="p-skill">Rails</span> application. I started my journey in functional programming too.</p>
     </div>
-    <div class="entry">
-        <time>2011 to 2012</time>
-        <div class="entity"><a href="https://www.audena.de/">Audena</a></div>
-        <div class="description">My first employment as a frontend developer. Mostly working on an interactive 2D
-            Furniture Configurator using Coffeescript and D3.js.
-        </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2011</time>
+        to
+        <time class="dt-end">2012</time>
+        <p class="p-location"><a href="https://www.audena.de/">Audena</a></p>
+        <p class="p-name">Frontend Developer</p>
+        <p class="p-summary">My first employment as a frontend developer. Mostly
+            working on an interactive 2D Furniture Configurator using
+            Coffeescript and D3.js at a small startup for bespoke furniture.
+        </p>
     </div>
-    <div class="entry">
-        <time>2006 to 2013</time>
-        <div class="entity"><a href="https://de.wikipedia.org/wiki/Ja,_Panik">Ja, Panik</a></div>
-        <div class="description">
-            Musical career playing piano and synthesizers in a somewhat successful band. Four records, 14 singles,
+    <div class="p-experience h-event">
+        <time class="dt-start">2006</time>
+        to
+        <time class="dt-end">2013</time>
+        <p class="p-location"><a href="https://de.wikipedia.org/wiki/Ja,_Panik">Ja,
+            Panik</a></p>
+        <p class="p-summary">
+            Musical career playing piano and synthesizers in a modestly
+            successful band. Four records, 14 singles,
             hundreds of concerts, one book. Friendship, love and pain.
-        </div>
+        </p>
     </div>
-    <div class="entry">
-        <time>2004 to 2009</time>
-        <div class="entity">Technical University of Vienna</div>
-        <div class="grade"><em>Bachelor of Science in Computer Science</em></div>
+    <div class="p-education h-event">
+        <time class="dt-start">2004</time>
+        to
+        <time class="dt-end">2009</time>
+        <p class="p-location">Technical University of Vienna</p>
+        <div class="p-name">Bachelor of Science in Computer Science</div>
     </div>
 </main>
 <footer>
-    This website is hosted on a Raspberry Pi 3 in my home, optimized for low energy usage.
+    This website is hosted on a Raspberry Pi 3 in my home, optimized for low
+    energy usage.
 </footer>
 </body>
 </html>
