@@ -9,29 +9,87 @@
     <style>
         :root {
             --line-height: 1.7rem;
+            --background-color: white;
         }
 
-        html, body {
-            height: 100%;
-            margin: 0;
+        html {
+            font-size: 18px;
+        }
+
+        /* prevent scrollbar from changing automatic margin
+           https://aykevl.nl/2014/09/fix-jumping-scrollbar */
+        @media screen and (min-width: 680px) {
+            html {
+                margin-left: calc(100vw - 100%);
+                margin-right: 0;
+            }
+        }
+
+        body {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 680px) {
+            /* smaller screens */
+            body {
+                font-size: 16px;
+                margin: 0 20px;
+            }
         }
 
         .substance {
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 16px;
             line-height: var(--line-height);
             text-rendering: optimizeLegibility;
-            margin: var(--line-height) auto;
-            max-width: 35rem;
+            max-width: 58ch;
         }
 
-        header, main, footer {
-            margin-bottom: calc(2 * var(--line-height));
+        header {
+            padding-top: calc(2 * var(--line-height));
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            margin-bottom: var(--line-height);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1ch;
         }
 
         h1 {
             font-size: 1rem;
             font-weight: normal;
+            margin: var(--line-height) 0;
+        }
+
+        p {
+            margin: var(--line-height) 0;
+        }
+
+        section, main {
+            padding-top: calc(12 * var(--line-height));
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: var(--background-color);
+        }
+
+        section:target, main:target {
+            display: block;
+        }
+
+        main#home {
+            display: block;
         }
 
         .portrait {
@@ -50,8 +108,16 @@
 </head>
 <body class="substance">
 <header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resume">Résumé</a></li>
+        </ul>
+    </nav>
     <img src="images/portrait.jpeg" class="portrait"
          alt="A painted portrait of me" width="200" height="200"/>
+</header>
+<main id="home">
     <p class='about-message'>
         Welcome! My name is Christian Treppo, may I offer you something?<br>
         Maybe you care to take a look at my
@@ -71,9 +137,14 @@
         </svg>
         music</a>.<br>
         Of course, you can always email me at [my first name]@treppo.org.
+        You can also find me on <a rel="me" href="https://mastodon.online/@treppo">Mastodon</a>.
     </p>
-</header>
-<main class="h-resume">
+    <p>
+        This website is hosted on a Raspberry Pi 3 in my home, optimized for low
+        energy usage.<br>
+    </p>
+</main>
+<section id="resume" class="h-resume">
     <h1 class="p-name">Curriculum vitae</h1>
     <div class="p-experience h-event">
         <time class="dt-start">2015</time>
@@ -82,7 +153,12 @@
         <p class="p-location"><a
                 href="https://thoughtworks.com/">Thoughtworks</a></p>
         <p class="p-name">Lead Consultant Developer</p>
-        <p class="p-summary">In four years of consulting, I helped with <span class="p-skill">micro-service transformation</span> and implementation of <span class="p-skill">Continuous Delivery</span> at a leading European marketplace for cars, a major global fashion retailer and a world leader in the healthcare industry. I went from individual contributor and coach to <span class="p-skill">technical leader</span> of individual teams and lately a whole client account, responsible for the technical excellence and individual growth in diverse and safe teams.</p>
+        <p class="p-summary">In four years of consulting, I helped with <span class="p-skill">micro-service transformation</span>
+            and implementation of <span class="p-skill">Continuous Delivery</span> at a leading European marketplace for
+            cars, a major global fashion retailer and a world leader in the healthcare industry. I went from individual
+            contributor and coach to <span class="p-skill">technical leader</span> of individual teams and lately a
+            whole client account, responsible for the technical excellence and individual growth in diverse and safe
+            teams.</p>
     </div>
     <div class="p-experience h-event">
         <time class="dt-start">2014</time>
@@ -90,7 +166,9 @@
         <time class="dt-end">2015</time>
         <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
         <p class="p-name">Senior Developer</p>
-        <p class="p-summary">For a brief period I returned to a company already in trouble until most of the development team left. I got to contribute to my first Clojure codebase and attend Fred George's excellent Object Bootcamp.</p>
+        <p class="p-summary">For a brief period I returned to a company already in trouble until most of the development
+            team left. I got to contribute to my first Clojure codebase and attend Fred George's excellent Object
+            Bootcamp.</p>
     </div>
     <div class="p-education h-event">
         <time class="dt-start">2013</time>
@@ -106,7 +184,14 @@
         <time class="dt-end">2013</time>
         <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
         <p class="p-name">Frontend Developer</p>
-        <p class="p-summary">Entering the startup scene of Berlin at an Airbnb <del>rip-off</del> competitor. Over time, we built a solid development team, practicing <span class="p-skill">TDD</span>, <span class="p-skill">pair programming</span> and <span class="p-skill">Kanban</span>. I mostly lead the effort to make website responsive, untangle the Jquery spaghetti and improve the performance before moving to the backend where we decoupled the search service from the monolithic <span class="p-skill">Rails</span> application. I started my journey in functional programming too.</p>
+        <p class="p-summary">Entering the startup scene of Berlin at an Airbnb
+            <del>rip-off</del>
+            competitor. Over time, we built a solid development team, practicing <span class="p-skill">TDD</span>, <span
+                    class="p-skill">pair programming</span> and <span class="p-skill">Kanban</span>. I mostly lead the
+            effort to make website responsive, untangle the Jquery spaghetti and improve the performance before moving
+            to the backend where we decoupled the search service from the monolithic <span class="p-skill">Rails</span>
+            application. I started my journey in functional programming too.
+        </p>
     </div>
     <div class="p-experience h-event">
         <time class="dt-start">2011</time>
@@ -138,11 +223,6 @@
         <p class="p-location">Technical University of Vienna</p>
         <div class="p-name">Bachelor of Science in Computer Science</div>
     </div>
-</main>
-<footer>
-    This website is hosted on a Raspberry Pi 3 in my home, optimized for low
-    energy usage.<br>
-    You also find me on <a rel="me" href="https://mastodon.online/@treppo">Mastodon</a>
-</footer>
+</section>
 </body>
 </html>
