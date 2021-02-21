@@ -14,13 +14,6 @@
             --primary-color: gold;
         }
 
-        @font-face {
-            font-family: system;
-            font-style: normal;
-            font-weight: bold;
-            src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-        }
-
         html {
             font-size: 18px;
             background-color: var(--background-color);
@@ -50,7 +43,7 @@
         }
 
         .substance {
-            font-family: system;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: var(--line-height);
             text-rendering: optimizeLegibility;
             max-width: 58ch;
@@ -100,6 +93,8 @@
 
         p {
             margin: var(--line-height) 0;
+            text-align: justify;
+            hyphens: auto;
         }
 
         section, main {
@@ -109,8 +104,6 @@
             top: 0;
             width: 100%;
             background-color: var(--background-color);
-            text-align: justify;
-            hyphens: auto;
         }
 
 
@@ -175,7 +168,7 @@
         }
 
         .button:hover {
-            box-shadow: #bbb 5px 5px;
+            box-shadow: var(--text-color) 5px 5px;
             margin-top: 0;
             margin-left: -5px;
             margin-bottom: calc(5px + 2rem);
@@ -218,7 +211,7 @@
         10+ (object-oriented and functional) programming languages in production to date
     </p>
     <p class="center contact">
-        <a href="#" class="button">Get in touch</a>
+        <a href="#" class="button">Get in touch!</a>
     </p>
     <script>
         const $button = document.querySelector(".button");
@@ -237,6 +230,7 @@
         <time class="dt-start">2020</time>
         to
         <time class="dt-end">present</time>
+        <p class="p-location"><a href="https://treppo.org">treppo.org</a></p>
         <p class="p-name">Freelance Software Development and Consulting</p>
         <p class="p-summary">
             I'm a helping small, medium and big multi-national
