@@ -10,11 +10,17 @@
         :root {
             --line-height: 1.7rem;
             --background-color: white;
+            --text-color: #222;
+            --primary-color: gold;
+        }
+
+        .night {
+            --background-color: black;
+            --text-color: #eee;
         }
 
         html {
             font-size: 18px;
-            color: #343e3d;
         }
 
         /* prevent scrollbar from changing automatic margin
@@ -26,15 +32,11 @@
             }
         }
 
-        @font-face {
-            font-family: 'Garamond Regular';
-            src: local('Garamond Regular'), url(/assets/garamond-regular.woff2) format('woff2');
-            font-display: swap;
-        }
-
         body {
             margin: 0 auto;
             position: relative;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         @media only screen and (max-width: 680px) {
@@ -46,10 +48,10 @@
         }
 
         .substance {
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Avenir Next', "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: var(--line-height);
             text-rendering: optimizeLegibility;
-            max-width: 58ch;
+            max-width: 60ch;
         }
 
         header {
@@ -73,30 +75,51 @@
         }
 
         a {
-            border-bottom: 3px solid #ffca3a;
+            border-bottom: 3px solid var(--primary-color);
             text-decoration: none;
-            color: #343e3d;
+            color: var(--text-color);
+        }
+
+        a:hover {
+            border: none;
         }
 
         h1 {
-            font-size: 2rem;
-            font-weight: normal;
+            font-size: 1.7rem;
             margin: var(--line-height) 0;
-            font-family: 'Garamond Regular', serif;
-            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        h2 + p {
+            margin-top: 0;
         }
 
         p {
             margin: var(--line-height) 0;
+            text-align: justify;
+            hyphens: auto;
         }
 
         section, main {
-            padding-top: calc(12 * var(--line-height));
+            padding-top: calc(5 * var(--line-height));
             display: none;
             position: absolute;
             top: 0;
             width: 100%;
             background-color: var(--background-color);
+        }
+
+
+        @media only screen and (max-width: 1000px) {
+            /* smaller screens */
+            section, main {
+                padding-top: calc(12 * var(--line-height));
+            }
         }
 
         section:target, main:target {
@@ -108,7 +131,16 @@
         }
 
         .portrait {
-            border-radius: 50%;
+            filter: contrast(1.1);
+        }
+
+        @media only screen and (min-width: 1000px) {
+            /* bigger screens */
+            .portrait {
+                position: absolute;
+                top: calc(6 * var(--line-height));
+                left: -240px;
+            }
         }
 
         .h-event {
@@ -120,31 +152,34 @@
             margin-bottom: 0;
         }
 
-        .center {
-            text-align: center;
-        }
-
         .button {
-            display: inline-block;
-            background-color: #ffca3a;
-            color: #343e3d;
+            border-bottom: 0;
             font-weight: bold;
-            text-transform: uppercase;
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: black;
             text-shadow: white 0 0 1px;
             text-decoration: none;
-            padding: 0 1.5rem;
-            line-height: 3rem;
-            height: 3rem;
+            padding: 0 1rem;
+            line-height: 2.75rem;
+            height: 2.75rem;
+            margin-top: 5px;
             margin-bottom: 2rem;
-            border-radius: 5px;
         }
 
         .button:hover {
-            box-shadow: gray 1px 1px 2px;
+            box-shadow: var(--text-color) 5px 5px;
+            margin-top: 0;
+            margin-left: -5px;
+            margin-bottom: calc(5px + 2rem);
         }
 
         .button:active {
             box-shadow: none;
+        }
+
+        .right {
+            float: right;
         }
     </style>
 </head>
@@ -154,13 +189,18 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#resume">Résumé</a></li>
+            <li class="right"><a href="#" id="switch">Switch</a></li>
         </ul>
+        <script>
+            $switch = document.querySelector("#switch")
+            $switch.addEventListener("click", () => {
+                document.body.classList.toggle("night");
+            })
+        </script>
     </nav>
-    <div class="center">
-        <img src="assets/me1x.webp" class="portrait"
-             alt="A photo of me laughing" width="200" height="200"
-             srcset="assets/me2x.webp 2x"/>
-    </div>
+    <img src="assets/me1x.webp" class="portrait"
+         alt="A photo of me laughing" width="200" height="200"
+         srcset="assets/me2x.webp 2x"/>
 </header>
 <main id="home">
     <h1>Hello! My name is Christian Treppo</h1>
@@ -175,8 +215,9 @@
         managers and technical leaders,
         lead development teams, or develop working software solo.
     </p>
+    <h2>Specialties</h2>
     <p>
-        Specialties: Agile and lean software development, Extreme Programming, Monolithic and Micro-service
+        Agile and lean software development, Extreme Programming, Monolithic and Micro-service
         architecture, Continuous Delivery, Frontend and Backend,
         10+ (object-oriented and functional) programming languages in production to date
     </p>
@@ -184,11 +225,11 @@
         <a href="#" class="button">Get in touch</a>
     </p>
     <script>
-        const $button = document.querySelector(".button");
+        const $link = document.querySelector(".contact a");
         // percent encoded https://krypted.com/utilities/html-encoding-reference/
         const name = "%63%68%72%69%73%74%69%61%6E";
         const lastname = "%74%72%65%70%70%6F";
-        $button.href = "mailto:" + name + "%40" + lastname + ".org";
+        $link.href = "mailto:" + name + "%40" + lastname + ".org";
     </script>
     <noscript>
         <p>You can reach me at &lt;my first name&gt;@treppo.org</p>
@@ -200,6 +241,7 @@
         <time class="dt-start">2020</time>
         to
         <time class="dt-end">present</time>
+        <p class="p-location"><a href="https://treppo.org">treppo.org</a></p>
         <p class="p-name">Freelance Software Development and Consulting</p>
         <p class="p-summary">
             I'm a helping small, medium and big multi-national
