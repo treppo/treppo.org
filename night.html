@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>treppo.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --line-height: 1.7rem;
+            --background-color: black;
+            --text-color: #eee;
+            --primary-color: gold;
+        }
+
+        @font-face {
+            font-family: system;
+            font-style: normal;
+            font-weight: bold;
+            src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+        }
+
+        html {
+            font-size: 18px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* prevent scrollbar from changing automatic margin
+           https://aykevl.nl/2014/09/fix-jumping-scrollbar */
+        @media screen and (min-width: 680px) {
+            html {
+                margin-left: calc(100vw - 100%);
+                margin-right: 0;
+            }
+        }
+
+        body {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 680px) {
+            /* smaller screens */
+            body {
+                font-size: 16px;
+                margin: 0 20px;
+            }
+        }
+
+        .substance {
+            font-family: system;
+            line-height: var(--line-height);
+            text-rendering: optimizeLegibility;
+            max-width: 58ch;
+        }
+
+        header {
+            padding-top: calc(0.5 * var(--line-height));
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            margin-bottom: calc(2.5 * var(--line-height));
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1ch;
+        }
+
+        a {
+            border-bottom: 3px solid var(--primary-color);
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: var(--line-height) 0;
+            font-family: 'Avenir Next Condensed', 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        h2 + p {
+            margin-top: 0;
+        }
+
+        p {
+            margin: var(--line-height) 0;
+        }
+
+        section, main {
+            padding-top: calc(5 * var(--line-height));
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: var(--background-color);
+            text-align: justify;
+            hyphens: auto;
+        }
+
+
+        @media only screen and (max-width: 1000px) {
+            /* smaller screens */
+            section, main {
+                padding-top: calc(12 * var(--line-height));
+            }
+        }
+
+        section:target, main:target {
+            display: block;
+        }
+
+        main#home {
+            display: block;
+        }
+
+        .portrait {
+            border-radius: 50%;
+        }
+
+        @media only screen and (min-width: 1000px) {
+            /* bigger screens */
+            .portrait {
+                position: absolute;
+                top: calc(6 * var(--line-height));
+                left: -240px;
+            }
+        }
+
+        .h-event {
+            margin: var(--line-height) 0;
+        }
+
+        .h-event .p-location, .h-event .p-name, .h-event .p-summary {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            border-bottom: 0;
+            font-family: 'Avenir Next Condensed', sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            text-transform: uppercase;
+            text-shadow: white 0 0 1px;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            line-height: 3rem;
+            height: 3rem;
+            margin-top: 5px;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            box-shadow: #bbb 5px 5px;
+            margin-top: 0;
+            margin-left: -5px;
+            margin-bottom: calc(5px + 2rem);
+        }
+
+        .button:active {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="substance">
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resume">Résumé</a></li>
+        </ul>
+    </nav>
+    <img src="assets/me1x.webp" class="portrait"
+         alt="A photo of me laughing" width="200" height="200"
+         srcset="assets/me2x.webp 2x"/>
+</header>
+<main id="home">
+    <h1>Hello! My name is Christian Treppo</h1>
+    <p class='about-message'>
+        I'm a Barcelona based freelance software developer and consultant helping small, medium and big multi-national
+        companies to create digital products – from inception to production. <br>
+        I focus on technical simplicity and lean software development processes,
+        capturing the business' complexity while avoiding cruft. Together with my clients we shape efficient
+        organizational structures and technical architectures, that
+        enable fast delivery of value,
+        high technical quality and reliability, and happy end-users. In my role I advice CTOs, CEOs, plan with project
+        managers and technical leaders,
+        lead development teams, or develop working software solo.
+    </p>
+    <h2>Specialties</h2>
+    <p>
+        Agile and lean software development, Extreme Programming, Monolithic and Micro-service
+        architecture, Continuous Delivery, Frontend and Backend,
+        10+ (object-oriented and functional) programming languages in production to date
+    </p>
+    <p class="center contact">
+        <a href="#" class="button">Get in touch</a>
+    </p>
+    <script>
+        const $button = document.querySelector(".button");
+        // percent encoded https://krypted.com/utilities/html-encoding-reference/
+        const name = "%63%68%72%69%73%74%69%61%6E";
+        const lastname = "%74%72%65%70%70%6F";
+        $button.href = "mailto:" + name + "%40" + lastname + ".org";
+    </script>
+    <noscript>
+        <p>You can reach me at &lt;my first name&gt;@treppo.org</p>
+    </noscript>
+</main>
+<section id="resume" class="h-resume">
+    <h1 class="p-name">Curriculum vitae</h1>
+    <div class="p-experience h-event">
+        <time class="dt-start">2020</time>
+        to
+        <time class="dt-end">present</time>
+        <p class="p-name">Freelance Software Development and Consulting</p>
+        <p class="p-summary">
+            I'm a helping small, medium and big multi-national
+            companies to create digital products – from inception to production. <br>
+            I focus on technical simplicity and lean software development processes,
+            capturing the business' complexity while avoiding cruft. Together with my clients we shape efficient
+            organizational structures and technical architectures, that
+            enable fast delivery of value,
+            high technical quality and reliability, and happy end-users. In my role I advice CTOs, CEOs, plan with
+            project
+            managers and technical leaders,
+            lead development teams, or develop working software solo.
+        </p>
+        <p>
+            Specialties: Agile and lean software development, Extreme Programming, Monolithic and Micro-service
+            architecture, Continuous Delivery,
+            10+ (object-oriented and functional) programming languages in production to date
+        </p>
+    </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2015</time>
+        to
+        <time class="dt-end">2020</time>
+        <p class="p-location"><a
+                href="https://thoughtworks.com/">Thoughtworks</a></p>
+        <p class="p-name">Lead Consultant Developer</p>
+        <p class="p-summary">In five years of consulting, I helped with <span class="p-skill">micro-service transformation</span>,
+            <span class="p-skill">UI composition with micro-frontends</span>,
+            and implementation of <span class="p-skill">Continuous Delivery</span> at a leading European marketplace for
+            cars, a major global fashion retailer and a world leader in the healthcare industry. I went from individual
+            contributor and coach to <span class="p-skill">technical leader</span> of individual teams and as the Tech
+            Principal
+            for whole client accounts, responsible for the technical excellence, fast delivery of customer value, and
+            individual growth in diverse and safe
+            teams.</p>
+    </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2014</time>
+        to
+        <time class="dt-end">2015</time>
+        <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
+        <p class="p-name">Senior Developer</p>
+        <p class="p-summary">For a brief period I returned to a company already in trouble until most of the development
+            team left. I got to contribute to my first Clojure codebase and attend Fred George's excellent Object
+            Bootcamp.</p>
+    </div>
+    <div class="p-education h-event">
+        <time class="dt-start">2013</time>
+        to
+        <time class="dt-end">2014</time>
+        <p class="p-location">National College of Ireland Dublin</p>
+        <div class="p-name">Master of Science in Web Technologies</div>
+        <p class="p-summary">I took a year off to finish my degree and read dozens of books</p>
+    </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2012</time>
+        to
+        <time class="dt-end">2013</time>
+        <p class="p-location"><a href="https://www.wimdu.com/">Wimdu</a></p>
+        <p class="p-name">Frontend Developer</p>
+        <p class="p-summary">Entering the startup scene of Berlin at an Airbnb
+            <del>rip-off</del>
+            competitor. Over time, we built a solid development team, practicing <span class="p-skill">TDD</span>, <span
+                    class="p-skill">pair programming</span> and <span class="p-skill">Kanban</span>. I mostly lead the
+            effort to make website responsive, untangle the Jquery spaghetti and improve the performance before moving
+            to the backend where we decoupled the search service from the monolithic <span class="p-skill">Rails</span>
+            application. I started my journey in functional programming too.
+        </p>
+    </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2011</time>
+        to
+        <time class="dt-end">2012</time>
+        <p class="p-location"><a href="https://www.audena.de/">Audena</a></p>
+        <p class="p-name">Frontend Developer</p>
+        <p class="p-summary">My first employment as a frontend developer. Mostly
+            working on an interactive 2D Furniture Configurator using
+            Coffeescript and D3.js at a small startup for bespoke furniture.
+        </p>
+    </div>
+    <div class="p-experience h-event">
+        <time class="dt-start">2006</time>
+        to
+        <time class="dt-end">2013</time>
+        <p class="p-location"><a href="https://de.wikipedia.org/wiki/Ja,_Panik">Ja,
+            Panik</a></p>
+        <p class="p-summary">
+            Musical career playing piano and synthesizers in a modestly
+            successful band. Four records, 14 singles,
+            hundreds of concerts, one book. Friendship, love and pain.
+        </p>
+    </div>
+    <div class="p-education h-event">
+        <time class="dt-start">2004</time>
+        to
+        <time class="dt-end">2009</time>
+        <p class="p-location">Technical University of Vienna</p>
+        <div class="p-name">Bachelor of Science in Computer Science</div>
+    </div>
+</section>
+</body>
+</html>
