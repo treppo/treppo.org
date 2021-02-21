@@ -25,6 +25,11 @@
             }
         }
 
+        @font-face {
+            font-family: 'Garamond Regular';
+            src: local('Garamond Regular'), url(/assets/garamond-regular.woff2) format('woff2');
+        }
+
         body {
             margin: 0 auto;
             position: relative;
@@ -66,9 +71,11 @@
         }
 
         h1 {
-            font-size: 1rem;
+            font-size: 2rem;
             font-weight: normal;
             margin: var(--line-height) 0;
+            font-family: 'Garamond Regular', serif;
+            text-align: center;
         }
 
         p {
@@ -114,8 +121,10 @@
             <li><a href="#resume">Résumé</a></li>
         </ul>
     </nav>
-    <img src="images/portrait.jpeg" class="portrait"
-         alt="A painted portrait of me" width="200" height="200"/>
+    <div class="center">
+        <img src="assets/portrait.jpeg" class="portrait"
+             alt="A painted portrait of me" width="200" height="200"/>
+    </div>
 </header>
 <main id="home">
     <p class='about-message'>
