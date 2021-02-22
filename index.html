@@ -214,6 +214,18 @@
         .right {
             float: right;
         }
+
+        #switch {
+            display: none;
+        }
+
+        .js #switch {
+            display: inline-block;
+        }
+
+        .night #switch {
+            border-color: var(--highlight-color);
+        }
     </style>
 </head>
 <body class="substance">
@@ -224,10 +236,22 @@
             <li><a href="#resume">Résumé</a></li>
             <li class="right"><a href="#" id="switch">Switch</a></li>
         </ul>
-        <script>
-            $switch = document.querySelector("#switch")
-            $switch.addEventListener("click", () => {
+        <script defer>
+            document.body.classList.add("js");
+
+            const prefersNightMode = document.cookie.split(';').some((item) => item.includes('night=1'));
+            const toggleNightMode = () => document.body.classList.toggle("night");
+            const toggleNightModeCookie = () => document.cookie = prefersNightMode ? "night=0" : "night=1";
+
+            if (prefersNightMode) {
                 document.body.classList.toggle("night");
+            }
+
+            const $switch = document.querySelector("#switch")
+            $switch.addEventListener("click", (event) => {
+                event.preventDefault();
+                toggleNightMode();
+                toggleNightModeCookie();
             })
         </script>
     </nav>
@@ -282,7 +306,8 @@
             capturing the business' complexity while avoiding cruft. Together with my clients we shape
             organizational structures and technical architectures, that
             enable fast delivery of value,
-            high technical quality and reliability, and happy end-users. In my role I advice CTOs, CEOs, plan with project
+            high technical quality and reliability, and happy end-users. In my role I advice CTOs, CEOs, plan with
+            project
             managers and technical leaders, lead development teams, or develop working software solo.
         </p>
         <p>
