@@ -173,11 +173,10 @@
         }
 
         .button {
-            border-bottom: 0;
             font-weight: bold;
             display: inline-block;
-            background-color: var(--text-color);
-            color: var(--background-color);
+            border: 3px solid;
+            border-color: var(--text-color);
             text-shadow: white 0 0 1px;
             text-decoration: none;
             padding: 0 1rem;
@@ -189,6 +188,7 @@
         }
 
         .button:hover {
+            border-color: var(--text-color);
             box-shadow: var(--highlight-color) 5px 5px;
             margin-top: 0;
             margin-left: -5px;
