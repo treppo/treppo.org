@@ -103,6 +103,13 @@
             line-height: calc(1.7 * var(--line-height));
         }
 
+        @media only screen and (min-width: 1000px) {
+            /* bigger screens */
+            h1 {
+                margin: var(--line-height) -10rem;
+            }
+        }
+
         h2 {
             font-size: 1rem;
             margin: 0;
@@ -123,7 +130,7 @@
         }
 
         section, main {
-            padding-top: calc(5 * var(--line-height));
+            padding-top: calc(4 * var(--line-height));
             display: none;
             position: absolute;
             top: 0;
@@ -149,14 +156,15 @@
 
         .portrait {
             filter: contrast(1.1);
+            rotate: 1deg;
         }
 
         @media only screen and (min-width: 1000px) {
             /* bigger screens */
             .portrait {
                 position: absolute;
-                top: calc(6 * var(--line-height));
-                left: -240px;
+                top: calc(4 * var(--line-height));
+                right: calc(-1 * (5vw + 200px));
             }
         }
 
@@ -170,6 +178,10 @@
 
         .p-experience {
             margin-bottom: calc(2 * var(--line-height));
+        }
+
+        .contact {
+            text-align: right;
         }
 
         .button {
