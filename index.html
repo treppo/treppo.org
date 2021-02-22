@@ -11,7 +11,7 @@
             --line-height: 1.7rem;
             --background-color: white;
             --text-color: #222;
-            --primary-color: gold;
+            --highlight-color: gold;
         }
 
         .night {
@@ -75,19 +75,27 @@
         }
 
         a {
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 3px solid;
+            border-color: var(--text-color);
             text-decoration: none;
             color: var(--text-color);
+            transition-property: border-color;
+            transition-duration: 0.5s;
         }
 
         a:hover {
-            border: none;
+            border-color: var(--highlight-color);
         }
 
         h1 {
-            font-size: 1.7rem;
-            margin: var(--line-height) 0;
-            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: bolder;
+            display: inline-block;
+            padding: 0 1rem;
+            margin: var(--line-height) -1rem;
+            background-color: var(--text-color);
+            color: var(--background-color);
+            line-height: calc(1.7 * var(--line-height));
         }
 
         h2 {
@@ -100,9 +108,13 @@
         }
 
         p {
-            margin: var(--line-height) 0;
+            margin: 0 0 var(--line-height) 0;
             text-align: justify;
             hyphens: auto;
+        }
+
+        p + p {
+            margin-top: var(--line-height);
         }
 
         section, main {
@@ -148,16 +160,19 @@
         }
 
         .h-event .p-location, .h-event .p-name, .h-event .p-summary {
-            margin-top: 0;
             margin-bottom: 0;
+        }
+
+        .p-experience {
+            margin-bottom: calc(2 * var(--line-height));
         }
 
         .button {
             border-bottom: 0;
             font-weight: bold;
             display: inline-block;
-            background-color: var(--primary-color);
-            color: black;
+            background-color: var(--text-color);
+            color: var(--background-color);
             text-shadow: white 0 0 1px;
             text-decoration: none;
             padding: 0 1rem;
@@ -165,10 +180,11 @@
             height: 2.75rem;
             margin-top: 5px;
             margin-bottom: 2rem;
+            transition: margin 0.2s, box-shadow 0.2s;
         }
 
         .button:hover {
-            box-shadow: var(--text-color) 5px 5px;
+            box-shadow: var(--highlight-color) 5px 5px;
             margin-top: 0;
             margin-left: -5px;
             margin-bottom: calc(5px + 2rem);
@@ -204,7 +220,7 @@
 </header>
 <main id="home">
     <h1>Hello! My name is Christian Treppo</h1>
-    <p class='about-message'>
+    <p>
         I'm a Barcelona based freelance software developer and consultant helping small, medium and multi-national
         companies to create digital products – from inception to production. <br>
         I focus on technical simplicity and lean software development processes,
