@@ -273,9 +273,11 @@
             })
         </script>
     </nav>
-    <img src="assets/me1x.webp" class="portrait"
-         alt="A photo of me laughing" width="200" height="200"
-         srcset="assets/me2x.webp 2x"/>
+    <picture>
+        <source type="image/webp" srcset="/assets/me2x.webp 2x">
+        <source type="image/webp" srcset="/assets/me1x.webp">
+        <img src="assets/me.jpeg" class="portrait" alt="A photo of me laughing" width="200" height="200"/>
+    </picture>
 </header>
 <main id="home">
     <h1>Hello! My name is Christian Treppo</h1>
