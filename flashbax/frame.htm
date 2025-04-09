@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>frame</title>
+<base target="Hauptframe">
+<style type="text/css"><!--
+body      {scrollbar-face-color: #FF686F; scrollbar-shadow-color: #FFFFFF; scrollbar-highlight-color: #FFFFFF; scrollbar-3dlight-color: #FFFFFF; scrollbar-darkshadow-color: #FFFFFF; scrollbar-track-color: #FFA9AB; scrollbar-arrow-color: #FFFFFF}
+//--></style>
+<script language="JavaScript">
+<!--
+if (document.images) {
+  image1on = new Image();
+  image1on.src="bilder/zuruck2.png";
+  image1off = new Image();
+  image1off.src="bilder/zuruck.png";
+
+}
+
+function changeImages() {
+  if (document.images) {
+    for (var i=0; i<changeImages.arguments.length; i+=2) {
+      document[changeImages.arguments[i]].src = eval(changeImages.arguments[i+1] + ".src");
+    }
+  }
+}
+// -->
+</script>
+<script type ="text/JavaScript">
+   <!--
+   if (document.images){
+   var eins = new Image();
+   eins.src = "bilder/zuruck2.png"
+   }
+   //-->
+</script>
+</head>
+
+<body background="bilder/tuch2.jpg">
+
+<p><span style="position: absolute; left: 4; top: 158"><a href="index.htm" onMouseOver="changeImages('image1', 'image1on')" onMouseOut="changeImages('image1', 'image1off')" target="_top"><img border="0" name="image1" src="bilder/zuruck.png" width="119" height="126"></a></span></p>
+
+</body>
+
+</html>
